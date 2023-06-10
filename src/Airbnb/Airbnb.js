@@ -17,25 +17,17 @@ class Airbnb extends React.Component {
     let form = e.target;
     let formData = new FormData(form);
     let formObj = Object.fromEntries(formData.entries());
-    // formObj.checkin = this.convertformat(formObj.checkin);
-    // formObj.checkin = this.convertformat(formObj.checkout);
     console.log('formObj:', formObj); // delete later
     this.getAirbnbs(formObj);
   }
 
-  // convertformat = (date) => {
-  //   let orgDate = new Date(date);
-  //   // let formattedDate = orgDate.getFullYear() + "-" + (orgDate.getMonth() + 1) + "-" + orgDate.getDate();
-  //   return orgDate;
-  // }
-
   getAirbnbs = (form) => {
-    axios.defaults.headers.common['X-RapidAPI-Key'] = process.env.REACT_APP_AIRBNB_API_KEY;
-    axios.defaults.headers.common['X-RapidAPI-Host'] = process.env.REACT_APP_AIRBNB_API_HOST;
     let requestURL = `${process.env.REACT_APP_SERVER}/airbnb?location=${form.location}&checkin=${form.checkin}&checkout=${form.checkout}&adults=${form.adults}&children=${form.children}&pets=${form.pets}&page=1`;
+    console.log(requestURL);
     axios.get(requestURL)
       .then(response => {
-        this.setState({ airbnbData: response }, console.log('airbnbData:', this.state.airbnbData));
+        console.log(response);
+        this.setState({ airbnbData: response.data }, () => console.log('airbnbData:', this.state.airbnbData));
         this.setState({ error: '' });
       })
       .catch(err => this.setState({ error: 'could not fetch airbnbs' }));

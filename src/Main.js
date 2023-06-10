@@ -16,6 +16,7 @@ class Main extends React.Component{
       NOMAD 
       </div>
       <Map />
+      {/* NOMAD  */}
       <Footer />
       </>
     )

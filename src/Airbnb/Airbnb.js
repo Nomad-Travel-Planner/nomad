@@ -39,7 +39,7 @@ class Airbnb extends React.Component {
         <Card style={{ width: '25rem' }}>
           <Card.Body>
             <Form onSubmit={this.handleSubmit}>
-              {/* Might delete this location formgroup */}
+              {/* Might delete this location formgroup later */}
               <Form.Group>
                 <Form.Label>Location</Form.Label>
                 <Form.Control type="text" placeholder="Enter location name" name='location' required />

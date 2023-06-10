@@ -1,21 +1,19 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Main from "./Main";
 // import { Image } from '/img/nomad-background.jpg';
 
 
-class App extends React.Component{
+class Main extends React.Component{
 
   
   render() {
     return(
       <>
       <Header />
-      <Main />
       <div style ={{ backgroundImage:'url(/nomad-background.jpg)' }}>
       NOMAD 
-    </div>
+      </div>
       <Footer />
       </>
     )
@@ -23,4 +21,4 @@ class App extends React.Component{
 }
 
 
-export default App;
+export default Main;

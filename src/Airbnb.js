@@ -1,6 +1,6 @@
 import React from "react";
 
-class Lodging extends React.Component {
+class Airbnb extends React.Component {
   render() {
     return (
       <>
@@ -9,4 +9,4 @@ class Lodging extends React.Component {
   }
 }
 
-export default Lodging;
+export default Airbnb;

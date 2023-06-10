@@ -11,9 +11,7 @@ class Main extends React.Component{
     return(
       <>
       <Header />
-      <div style ={{ backgroundImage:'url(/nomad-background.jpg)' }}>
-      NOMAD 
-      </div>
+      {/* NOMAD  */}
       <Footer />
       </>
     )

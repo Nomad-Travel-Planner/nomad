@@ -1,15 +1,20 @@
 import React from "react";
-import Map from "./Map";
-import Lodging from "./Lodging";
+import Header from "./Header";
+import Footer from "./Footer";
+import Main from "./Main";
 
-class Main extends React.Component {
+class App extends React.Component{
 
   render() {
     return(
       <>
+      <Header />
+      <Main />
+      <Footer />
       </>
     )
   }
 }
 
-export default Main;
+
+export default App;

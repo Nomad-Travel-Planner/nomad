@@ -1,15 +1,23 @@
 import React from "react";
 import Map from "./Map";
-import Lodging from "./Lodging";
+import Airbnb from "./Airbnb";
+import Camping from "./Camping";
+import Header from "./Header";
+import Footer from "./Footer";
 
-class Main extends React.Component {
+class App extends React.Component {
 
   render() {
     return(
       <>
+      <Header />
+      <div style ={{ backgroundImage:'url(/nomad-background.jpg)' }}>
+      NOMAD 
+      </div>
+      <Footer />
       </>
     )
   }
 }
 
-export default Main;
+export default App;

@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# nomad-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Jaye, Emily, Josh
 
-## Available Scripts
+### Figma Board
 
-In the project directory, you can run:
+https://www.figma.com/file/JYOaHiT7e9v54nR9cIPoPk/Untitled?type=whiteboard&node-id=0-1&t=aqNKd0dkZzRnxe1j-0
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+What are the key strengths of each person on the team?
 
-### `npm run build`
+Jaye - Attention to details. Top tier logic and problem solving.
+Emily - Backend building servers and databases. Godlike CSS Skills.
+Josh - Awesome support, teamplayer, hype-train
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+How can you best utilize these strengths in the execution of your project?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Jaye - Attention to details.
+Emily - Backend building servers and databases.
+Josh - Support teammates. create things
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In which professional competencies do you each want to develop greater strength?
 
-### `npm run eject`
+Jaye - Looking to grow in all areas. 
+Emily - Craft competency
+Josh - Looking to grow in software knowledge
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Knowing that every person in your team needs to understand all aspects of the project, how do you plan to approach the day-to-day work?
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Team meeting, decide tasks, execute.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+What will be your group’s process to resolve conflict, when it arises?
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Communication. Be nice about it, but not like.... you know... if you ahve problems, adress them.
 
-## Learn More
+What will your team do if one person is taking over the project and not letting the other members contribute?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Call em out!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+How will you approach each other and the challenges of the project knowing that it is impossible for all members to be at the exact same place in understanding and skill level?
 
-### Code Splitting
+Help eachother understand, call a TA if it is not working out explaining.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+How will you raise concerns to members who are not adequately contributing?
+How and when will you escalate the conflict if your resolution attempts are unsuccessful?
 
-### Analyzing the Bundle Size
+Call em out! Communicate
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+What hours will you be available to communicate?
 
-### Making a Progressive Web App
+Daytime hours - No Sundays
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+What platforms will you use to communicate (ie. Slack, phone …)?
 
-### Advanced Configuration
+Slack, text
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+How often will you take breaks?
 
-### Deployment
+As needed
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+What is your plan if you start to fall behind?
 
-### `npm run build` fails to minify
+Work harder, plan better
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+How will you communicate after hours and on the weekend?
+
+Text, slack
+
+What is your strategy for ensuring everyone’s voice is heard?
+
+ask everyone
+
+How will you ensure that you are creating a safe environment where everyone feels 
+comfortable speaking up?
+
+Check in with eachother, make sure everyone is feeling heard.
+
+How you will identify tasks, assign tasks, know when they are complete, and manage work in general?
+
+outline the project, dig deeper into the components of the project, list tasks and pick/choose. keep proper git-flow.
+
+What project management tool will be used?
+
+Trello
+
+What components of your project will live on GitHub?
+
+All of them? except .env
+
+How will you share the repository with your teammates?
+
+made an organization on github and we are all admins
+
+What is your Git flow?
+
+goood communication - ACP often, pull before working.
+
+Will you be using a PR review workflow? If so, consider:
+How many people must review a PR?
+
+we will have main branch protection, but anyone can complete pull requests.
+
+Who merges PRs?
+
+individuals
+
+How often will you merge?
+
+end of the night, merge current work. then pull it back down for the next day
+
+How will you communicate that it’s time to merge?
+
+sound the alarms
+
+
+
+
+
+
+
+
+
+
+
+

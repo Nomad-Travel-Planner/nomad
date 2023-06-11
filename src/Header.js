@@ -8,14 +8,10 @@ import { withAuth0 } from '@auth0/auth0-react';
 
 class Header extends React.Component{
   render(){
+    console.log(this.props.auth0);
     return(
       <>
-      {/* <nav>
-        <ul>
-        <a href="./Explore.js">Explore</a>
-        <a href="./Profile.js">Profile</a>
-        </ul>
-      </nav> */}
+  
       <h1>NOMAD</h1>
       <Container>
 

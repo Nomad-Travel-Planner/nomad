@@ -3,30 +3,6 @@ import axios from "axios";
 import { Card, Form, Button } from "react-bootstrap";
 
 
-// class Campsites extends React.Component {
-
-//   render() {
-//     const CampStr = this.props.campsiteArr.map((element, idx) =>
-//       <Camping element={element}
-//         key={idx}
-//       />)
-//     return (
-//       <>
-//         <div className="campsites">
-//           <Card>
-//             <Card.Body>
-//               <Card.Title>Site Name: {this.props.element.site}</Card.Title>
-//               <Card.Text>Fee: {this.props.element.fee} </Card.Text>
-//               <Card.Text>description: {this.props.element.description}</Card.Text>
-//             </Card.Body>
-
-//           </Card>
-//         </div>
-//         {CampStr}
-//       </>
-//     )
-//   }
-// }
 
 class Camping extends React.Component {
   constructor(props) {
@@ -60,12 +36,12 @@ class Camping extends React.Component {
     return (
       <>
         <div className="camping">
-        <Card>
+        <Card className="camping-form">
         <Card.Body>
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
-                  <Form.Label>Location</Form.Label>
-                  <Form.Control type="text" placeholder="Enter location name" onChange={(e)=> this.setState({query:e.target.value})} required />
+                  <Form.Label>Find Nearby Camping</Form.Label>
+                  <Form.Control type="text" placeholder="Where are you going?" onChange={(e)=> this.setState({query:e.target.value})} required />
                   <Button type="submit">Find Camping</Button>
                 </Form.Group>
               </Form>

@@ -1,14 +1,30 @@
 body {
   background-image: url("./img/nomad-background.jpg");
   background-size: cover;
+ 
 }
 
 h1 {
   font-family: 'Amatic SC', cursive;
-  color:ivory;
-  text-align: center;
-  font-size: 300px;
+  color:ivory!important;
+  text-align: center!important;
+  font-size: 300px !important;
+  margin:250px !important;
+}
 
+.nav-link {
+
+}
+.justify-content-end {
+  font-family: 'Amatic SC', cursive;
+  height: 45px;
+
+}
+
+.justify-content-end a {
+  color: black;
+  font-size: 30px;
+  padding: 10px;
 }
 
 p {

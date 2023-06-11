@@ -1,14 +1,18 @@
 import React from "react";
 import Airbnb from "./Airbnb/Airbnb";
-import Camping from "./Camping";
+import Camping from "./Camping/Camping";
+// import "./explore.css";
 
 
 class Explore extends React.Component{
   render(){
     return(
       <>      
-      <Airbnb/>
+      <div className="Explore">
+
       <Camping />
+      <Airbnb/>
+      </div>
       </>
     )
   }

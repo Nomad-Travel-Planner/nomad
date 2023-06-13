@@ -27,9 +27,9 @@ root.render(
     <Router>
       <Routes>
         <Route exact path="/" element={<App/>} />
-        <Route path="/Explore" element={<Explore />} />
-        <Route path="/Profile" element={<Profile />}/>
-        <Route path="/Login" element={<LoginButton />} />
+        <Route path="explore" element={<Explore />} />
+        <Route path="/profile" element={<Profile />}/>
+        <Route path="/login" element={<LoginButton />} />
       </Routes>
     </Router>
   </Auth0Provider>,

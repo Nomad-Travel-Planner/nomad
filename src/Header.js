@@ -16,9 +16,9 @@ class Header extends React.Component {
           <Navbar className="justify-content-end" fixed="top" collapseOnSelect expand="lg" bg="light" variant="dark">
             <Navbar.Brand></Navbar.Brand>
             <NavItem><Link to="/" className="nav-link">Home</Link></NavItem>
-            {this.props.auth0.isAuthenticated && <NavItem><Link to="/Explore" className="nav-link">Explore</Link></NavItem>}
-            {this.props.auth0.isAuthenticated && <NavItem><Link to="/Profile" className="nav-link">Profile</Link></NavItem>}
-            <Link to="/Login" className='nav-link'>{this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}</Link>
+            {this.props.auth0.isAuthenticated && <NavItem><Link to="/explore" className="nav-link">Explore</Link></NavItem>}
+            {this.props.auth0.isAuthenticated && <NavItem><Link to="/profile" className="nav-link">Profile</Link></NavItem>}
+            <Link to="/login" className='nav-link'>{this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}</Link>
           </Navbar>
         </Container>
       </div>

@@ -9,9 +9,12 @@ class App extends React.Component {
 
   render() {
     return(
-      <div className="home">
+      <div className="app">
         <Header />
-        <Footer />
+        <div className="home">
+          <h1>NOMAD</h1>
+          <Footer />
+        </div>
       </div>
     )
   }

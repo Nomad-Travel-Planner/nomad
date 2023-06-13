@@ -1,8 +1,6 @@
 import React from "react";
 
-import Map from "./Map";
 import Airbnb from "./Airbnb/Airbnb";
-import Camping from "./Camping";
 
 // import Map from "./Map";
 // import Airbnb from "./Airbnb";
@@ -10,7 +8,8 @@ import Camping from "./Camping";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import "./app.css";
+import "./App.css";
+import GoogleMaps from "./Map/Map";
 
 class App extends React.Component {
 
@@ -22,6 +21,7 @@ class App extends React.Component {
       <div style ={{ backgroundImage:'url(/nomad-background.jpg)' }}>
       NOMAD 
       </div>
+      <GoogleMaps />
       <Airbnb/>
       {/* NOMAD  */}
 

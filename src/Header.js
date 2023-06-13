@@ -6,26 +6,22 @@ import LogoutButton from "./Logout";
 import { withAuth0 } from '@auth0/auth0-react';
 
 
-class Header extends React.Component{
-  render(){
+class Header extends React.Component {
+  render() {
     console.log(this.props.auth0);
-    return(
-      <>
-  
-      <h1>NOMAD</h1>
-      <Container>
-
-      <Navbar className="justify-content-end" fixed="top" collapseOnSelect expand="lg" bg="light" variant="dark">
-        <Navbar.Brand></Navbar.Brand>
-        <NavItem><Link to="/" className="nav-link">Home</Link></NavItem>
-        <NavItem><Link to="/Explore" className="nav-link">Explore</Link></NavItem>
-        <NavItem><Link to="/Profile" className="nav-link">Profile</Link></NavItem>
-        <Link to="/Login" className='nav-link'>{this.props.auth0.isAuthenticated ? <LogoutButton/> : <LoginButton/>}</Link>
-
-      </Navbar>
-      </Container>
-      </>
-
+    return (
+      <div className="header">
+        <h1>NOMAD</h1>
+        <Container>
+          <Navbar className="justify-content-end" fixed="top" collapseOnSelect expand="lg" bg="light" variant="dark">
+            <Navbar.Brand></Navbar.Brand>
+            <NavItem><Link to="/" className="nav-link">Home</Link></NavItem>
+            {this.props.auth0.isAuthenticated && <NavItem><Link to="/explore" className="nav-link">Explore</Link></NavItem>}
+            {this.props.auth0.isAuthenticated && <NavItem><Link to="/profile" className="nav-link">Profile</Link></NavItem>}
+            <Link to="/login" className='nav-link'>{this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}</Link>
+          </Navbar>
+        </Container>
+      </div>
     )
   }
 }

@@ -1,3 +1,7 @@
+.row {
+  --bs-gutter-x: 0 !important;
+}
+
 .home {
   height: 100vh;
   background-image: url("./img/nomad-background.jpg");

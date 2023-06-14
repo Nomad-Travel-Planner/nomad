@@ -29,13 +29,14 @@
   /* font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif; */
   -webkit-font-smoothing: antialiased;
   position: relative;
-  padding: 0.6em 1.4em;
+  padding: 0.4em 1.4em;
+  font-size: 1.4rem;
   padding-right: 4.7em;
   background: #009ED8;
   border: none;
   color: white;
   transition: 0.2s;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 .airbnb .button:before,
 .airbnb .button:after {
@@ -45,11 +46,11 @@
   right: 0;
   padding-top: inherit;
   padding-bottom: inherit;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 2.8em;
   content: "\00a0";
   font-family: 'FontAwesome', sans-serif;
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
   transition: 0.2s;
   transform-origin: 50% 60%;
@@ -66,7 +67,7 @@
   outline: none;
 }
 .airbnb .button {
-  min-width: 15em;
+  /* min-width: 10em; */
 }
 .airbnb .arrow {
   background: #FE5F55;

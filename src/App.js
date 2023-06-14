@@ -10,16 +10,17 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "./App.css";
 import GoogleMaps from "./Map/Map";
+// import { withAuth0 } from '@auth0/auth0-react';
+
 
 class App extends React.Component {
 
   render() {
     return(
       <>
-      <Header />
-
-      <div style ={{ backgroundImage:'url(/nomad-background.jpg)' }}>
-      NOMAD 
+      <div className="home">
+        <Header />
+        <Footer />
       </div>
       <GoogleMaps />
       <Airbnb/>
@@ -31,4 +32,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default (App);

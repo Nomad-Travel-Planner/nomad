@@ -1,18 +1,57 @@
 body {
   background-image: url("./img/nomad-background.jpg");
   background-size: cover;
+ 
 }
 
 h1 {
   font-family: 'Amatic SC', cursive;
-  color:ivory;
-  text-align: center;
-  font-size: 300px;
+  color:ivory!important;
+  text-align: center!important;
+  font-size: 300px !important;
+  margin:250px !important;
+}
+
+.justify-content-end {
+  font-family: 'Amatic SC', cursive !important;
+  height: 45px !important;
+  background-color: ivory;
 
 }
 
-p {
+.justify-content-end a {
+  color: black !important;
+  font-size: 30px !important;
+  padding: 10px !important;
+}
+
+.footer {
   font-family: 'Amatic SC', cursive;
   color:ivory;
   text-align: center;
+  margin: 30px;
 }
+.camping-form.card {
+  margin:20px;
+}
+.camping {
+  width: 500px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.card {
+  margin: auto;
+  font-family: 'Amatic SC', cursive;
+  color:ivory;
+  text-align: center;
+  font-size: 30px;
+}
+.camp {
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+}
+.camp-header{
+  font-size: 30px;
+}
+

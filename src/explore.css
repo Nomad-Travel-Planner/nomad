@@ -1,3 +1,19 @@
 body {
-  background-image: url("./img/nomad-explore-background.jpg");
+  height: 700vh;
+  /* background-image: url("./img/martin-kallur-ig-mkallur-l4m_o4aFOn8-unsplash.jpg"); */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 250px;
+}
+
+
+.d-grid  {
+  margin:auto;
+  padding-top: 100px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 100px;
+  width:250px;
+  height:100px;
 }

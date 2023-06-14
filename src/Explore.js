@@ -4,7 +4,8 @@ import axios from "axios";
 import { withAuth0 } from "@auth0/auth0-react";
 import Airbnb from "./Airbnb/Airbnb";
 import Camping from "./Camping/Camping";
-// import "./explore.css";
+import "./explore.css";
+import Header from "./Header";
 
 
 class Explore extends React.Component {
@@ -104,8 +105,8 @@ class Explore extends React.Component {
     return (
       <div className="explore">
         {!this.state.tripCreated && (
-          <div class="text-center mt-3">
-            <Button variant="primary" type="button" onClick={this.createTrip}>Create trip!</Button>
+          <div class="d-grid gap-2">
+            <Button variant="primary" type="button" size="lg" onClick={this.createTrip}>Create trip!</Button>
           </div>
         )}
 
@@ -118,6 +119,7 @@ class Explore extends React.Component {
             <Button variant="primary" onClick={this.saveTrip}>Save Trip</Button>
           </div>
         )}
+        <Header/>
       </div>
     )
   }

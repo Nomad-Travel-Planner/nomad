@@ -9,7 +9,15 @@ import Airbnb from "./Airbnb/Airbnb";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./App.css";
-import GoogleMaps from "./Map/Map";
+
+// import GoogleMaps from "./Map/Map";
+// import GoogleMap from "./Map/GoogleMap";
+import Searchbox from "./Map/Searchbox";
+import MainMap from "./Map/MainMap";
+import MarkerInfoWindow from "./Map/MarkerInfoWindow";
+import MarkerInfoWindowGmapsObj from "./Map/MarkerInfoWindowGmapsObj";
+// import Marker from "./Map/Marker";
+// import AutoComplete from "./Map/AutoComplete";
 // import { withAuth0 } from '@auth0/auth0-react';
 
 
@@ -22,7 +30,12 @@ class App extends React.Component {
         <Header />
         <Footer />
       </div>
-      <GoogleMaps />
+      <Searchbox />
+      <MainMap />
+      <MarkerInfoWindowGmapsObj />
+      <MarkerInfoWindow />
+    {/* <GoogleMapReact /> */}
+      {/* <GoogleMaps /> */}
       <Airbnb/>
       {/* NOMAD  */}
 

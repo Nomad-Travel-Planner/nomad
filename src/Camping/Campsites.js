@@ -1,30 +1,51 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Row, Col, Accordion } from "react-bootstrap";
 
 
 class Campsites extends React.Component {
 
   render() {
-    const CampStr = this.props.campsiteArr.map((element, idx) =>
-      <Camping element={element}
-        key={idx}
-      />)
+    
     return (
       <>
-        <div className="campsites">
-          <Card>
-            <Card.Body>
-              <Card.Title>Site Name: {this.props.element.site}</Card.Title>
-              <Card.Text>Fee: {this.props.element.fee} </Card.Text>
-              <Card.Text>description: {this.props.element.description}</Card.Text>
-            </Card.Body>
+      <Row>
 
-          </Card>
-        </div>
-        {CampStr}
-      </>
-    )
+       {this.props.campingData.map((element, idx) => 
+            <Col>
+            <div key={idx} className="campsites">
+        
+              {/* <Card className="camp">
+                <Card.Body>
+                  <Card.Title>Site Name: {element.site}</Card.Title>
+                  <Card.Text>Fee: {element.fee} </Card.Text>
+                  <Card.Text>description: {element.description}</Card.Text>
+                </Card.Body>
+              </Card> */}
+              <Accordion className="camp">
+                <Accordion.Item eventKey="{idx}">
+                  <Accordion.Header className="camp-header">{element.site}</Accordion.Header>
+                  <Accordion.Body>
+                    {element.fee}
+                    {element.description}
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+      
+            </div>
+            </Col>
+      )
+       }
+      </Row>
+        
+          {/* {CampStr ?
+            CampStr :
+            null}  */}
+         
+      
+        </>
+      )
+    }
   }
-}
+  
 
 export default Campsites;

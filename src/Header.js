@@ -11,7 +11,7 @@ class Header extends React.Component {
     console.log(this.props.auth0);
     return (
       <div className="header">
-        <h1>NOMAD</h1>
+        {/* <h1>NOMAD</h1> */}
         <Container>
           <Navbar className="justify-content-end" fixed="top" collapseOnSelect expand="lg" bg="light" variant="dark">
             <Navbar.Brand></Navbar.Brand>

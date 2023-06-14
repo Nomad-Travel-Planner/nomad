@@ -27,12 +27,12 @@ root.render(
     <Router>
       <Routes>
         <Route exact path="/" element={<App/>} />
-        <Route path="explore" element={<Explore />} />
+        <Route path="/explore" element={<Explore />} />
         <Route path="/profile" element={<Profile />}/>
         <Route path="/login" element={<LoginButton />} />
       </Routes>
     </Router>
-  </Auth0Provider>,
+  </Auth0Provider>
   </React.StrictMode>
 );
 

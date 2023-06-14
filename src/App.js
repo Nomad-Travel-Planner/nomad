@@ -20,7 +20,10 @@ class App extends React.Component {
       <>
       <div className="home">
         <Header />
-        <Footer />
+        <div className="home">
+          <h1>NOMAD</h1>
+          <Footer />
+        </div>
       </div>
       <GoogleMaps />
       <Airbnb/>

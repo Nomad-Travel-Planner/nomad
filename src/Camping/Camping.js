@@ -82,7 +82,6 @@ class Camping extends React.Component {
         {this.state.campingData.length > 0 &&
         <Campsites
         campingData={this.state.campingData} />}
-        :  null
         
       </>
     )

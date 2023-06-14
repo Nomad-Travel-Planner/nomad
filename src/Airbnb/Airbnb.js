@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Button, Card, Form, Col, Row } from "react-bootstrap";
+import { Button, Card, Form, Col, Row, Alert } from "react-bootstrap";
 import AirbnbCard from "./AirbnbCard";
 import './Airbnb.css';
 
@@ -1402,20 +1402,21 @@ class Airbnb extends React.Component {
     axios.get(requestURL)
       .then(response => {
         console.log(response);
-        // Only stores first 10 airbnbs
-        this.setState({ airbnbData: response.data.splice(10) }, () => console.log('airbnbData:', this.state.airbnbData));
-        this.setState({ error: '' });
+        // Only stores first 10 airbnbs (haven't tested yet)
+        this.setState({ airbnbData: response.data.splice(10), error: ''}, () => console.log('airbnbData:', this.state.airbnbData));
       })
       .catch(err => this.setState({ error: 'could not fetch airbnbs' }));
   }
 
   render() {
+    const { trip, editAirbnb } = this.props;
     return (
       <div className="airbnb">
+        {this.state.error && <Alert>{this.state.error}</Alert>}
         <Card className="airbnb-form" style={{ width: '25rem' }}>
           <Card.Body>
             <Form onSubmit={this.handleSubmit}>
-              {/* Might delete this location formgroup later */}
+              {/* TODO: Might delete this location formgroup later */}
               <Form.Group>
                 <Form.Label>Find An Airbnb</Form.Label>
                 <Form.Control type="text" placeholder="Enter location name" name='location' required />
@@ -1448,7 +1449,7 @@ class Airbnb extends React.Component {
         <Row>
           {this.state.airbnbData.length > 0 && this.state.airbnbData.map(airbnb =>
             <Col key={airbnb.url}>
-              <AirbnbCard airbnb={airbnb} />
+              <AirbnbCard airbnb={airbnb} trip={trip} editAirbnb={editAirbnb}/>
             </Col>
           )}
         </Row>

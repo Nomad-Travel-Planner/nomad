@@ -7,7 +7,30 @@
   background-size: cover;
   padding: 250px;
 } */
+body {
+  background-color: lightblue;
+}
 
+.col {
+  width:800px;
+  margin:auto;
+  padding:10px;
+  text-align: center;
+}
+
+.accordion-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:10px;
+  margin:20px;
+}
+
+.accordion-body img {
+  max-height: 300px;
+  max-width: 700px;
+  margin:auto;
+}
 
 .d-grid  {
   margin:auto;
@@ -16,4 +39,8 @@
   font-size: 100px;
   width:250px;
   height:100px;
+}
+
+.mb-3 {
+  font-family: 'Amatic SC', cursive;
 }

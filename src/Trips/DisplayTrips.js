@@ -27,6 +27,51 @@ class DisplayTrips extends Component {
     }
   }
 
+  /**
+   * Deletes the trip from the webpage and database
+   * @param {Object} trip - Trip to delete
+   */
+  deleteTrip = async (trip) => {
+    try {
+      const trips = [...this.state.trips];
+      const res = await this.props.auth0.getIdTokenClaims();
+      const jwt = res.__raw;
+
+      if (res) {
+        axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
+
+        const requestURL = `${process.env.REACT_APP_SERVER}/travel-routes/${trip._id}`;
+
+        await axios.delete(requestURL);
+        trips.splice(trips.indexOf(trip), 1);
+        
+        this.setState({ trips, error: '' });
+        this.handleAlertTimer('Deleted trip successfully');
+      }
+    } catch (err) {
+      this.setState({ successAlert: { show: false, message: '' }, error: 'Could not delete trip' });
+      console.error(err);
+    }
+  }
+
+  /**
+   * Function to handle the timer and hide the alert after a specified duration.
+   * handleAlertTimer code by ChatGPT
+   * @param {String} message - The Alert message to display to user
+   * @returns - Function that clears the timer
+   */
+  handleAlertTimer = (message) => {
+    this.setState({ successAlert: { show: true, message: message } });
+
+    const timer = setTimeout(() => {
+      this.setState({ successAlert: { show: false, message: '' } });
+    }, 3000); // 3 seconds (shown in miliseconds)
+
+    return () => {
+      clearTimeout(timer);
+    };
+  };
+
   componentDidMount() {
     this.getTrips();
   }
@@ -35,10 +80,10 @@ class DisplayTrips extends Component {
     return (
       <div>
         {this.state.error && <Alert variant='warning'>{this.state.error}</Alert>}
-        <Row>
+        <Row lg={'auto'} className='justify-content-center'>
           {this.state.trips.length > 0 && this.state.trips.map(trip => (
             <Col key={trip._id}>
-              <TripCard trip={trip}/>
+              <TripCard trip={trip} deleteTrip={this.deleteTrip}/>
             </Col>
           ))}
         </Row>

@@ -11,6 +11,7 @@ import {
 import Explore from "./Explore";
 import Profile from "./Profile";
 import LoginButton from "./Login";
+import Trip from './Trips/Trip';
 
 
 
@@ -27,12 +28,13 @@ root.render(
     <Router>
       <Routes>
         <Route exact path="/" element={<App/>} />
-        <Route path="explore" element={<Explore />} />
+        <Route path="/explore" element={<Explore />} />
         <Route path="/profile" element={<Profile />}/>
         <Route path="/login" element={<LoginButton />} />
+        <Route path="/trip/:tripID" element={<Trip />} />
       </Routes>
     </Router>
-  </Auth0Provider>,
+  </Auth0Provider>
   </React.StrictMode>
 );
 

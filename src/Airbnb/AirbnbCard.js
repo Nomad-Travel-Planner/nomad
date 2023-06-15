@@ -13,14 +13,15 @@ class AirbnbCard extends Component {
   closeModal = () => {
     this.setState({ showModal: false });
   }
+
   render() {
-    const { airbnb } = this.props;
+    const { airbnb, editAirbnb } = this.props;
     return (
       <div className='airbnb-card'>
         <Card style={{ width: '20rem' }}>
           <Carousel>
             {airbnb.images.map((image, index) => (
-              <Carousel.Item>
+              <Carousel.Item key={index}>
                 <Card.Img variant="top" src={image} alt={`image ${index}`} />
               </Carousel.Item>
             ))}
@@ -29,8 +30,8 @@ class AirbnbCard extends Component {
             <Card.Title>{airbnb.name}</Card.Title>
             <Card.Text><span>Address: </span>{airbnb.address}</Card.Text>
             
-            <button className="button arrow mb-3" onClick={() => this.setState({ showModal: true })}>Show details</button>
-            <Button variant="primary">Select</Button>
+            <button className="button arrow mb-3" onClick={() => this.setState({ showModal: true })}>Show details</button><br/>
+            <Button variant="primary" onClick={() => editAirbnb(airbnb)}>Select</Button>
             
           </Card.Body>
         </Card>

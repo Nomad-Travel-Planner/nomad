@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Accordion } from "react-bootstrap";
+import { Row, Col, Accordion, Button } from "react-bootstrap";
 
 
 class Campsites extends React.Component {
@@ -10,38 +10,27 @@ class Campsites extends React.Component {
       <>
       <Row>
 
+        <Accordion className="camp">
        {this.props.campingData.map((element, idx) => 
             <Col>
             <div key={idx} className="campsites">
-        
-              {/* <Card className="camp">
-                <Card.Body>
-                  <Card.Title>Site Name: {element.site}</Card.Title>
-                  <Card.Text>Fee: {element.fee} </Card.Text>
-                  <Card.Text>description: {element.description}</Card.Text>
-                </Card.Body>
-              </Card> */}
-              <Accordion className="camp">
                 <Accordion.Item eventKey="{idx}">
                   <Accordion.Header className="camp-header">{element.site}</Accordion.Header>
-                  <Accordion.Body>
+                  <Accordion.Body className="acc">
                     {element.fee}
                     {element.description}
+                    {element.URL}
+                    <Button variant="primary" onClick={() => this.props.editCamping(element)}>Select</Button>
+
                   </Accordion.Body>
                 </Accordion.Item>
-              </Accordion>
       
             </div>
             </Col>
       )
-       }
-      </Row>
-        
-          {/* {CampStr ?
-            CampStr :
-            null}  */}
-         
-      
+    }
+    </Accordion>
+      </Row>      
         </>
       )
     }

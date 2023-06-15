@@ -6,3 +6,8 @@
 .profile h2 {
   margin: 40px;
 }
+
+.text-center {
+  font-family: 'Amatic SC', cursive;
+  font-size: 60px;
+}

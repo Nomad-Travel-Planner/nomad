@@ -17,9 +17,9 @@ class Campsites extends React.Component {
                 <Accordion.Item eventKey="{idx}">
                   <Accordion.Header className="camp-header">{element.site}</Accordion.Header>
                   <Accordion.Body className="acc">
+                    <img src={element.image} alt="campsite"/>
                     {element.fee}
                     {element.description}
-                    {element.URL}
                     <Button variant="primary" onClick={() => this.props.editCamping(element)}>Select</Button>
 
                   </Accordion.Body>

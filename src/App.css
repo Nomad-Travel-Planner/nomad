@@ -70,9 +70,13 @@
   font-size: 30px;
 }
 
-.acc {
+.accordion-body {
   display: inline-block;
   position: relative;
   padding:10px;
 }
 
+.accordion-body img {
+  max-height: 300px;
+  margin:10px;
+}

@@ -5,6 +5,7 @@ import './Trip.css';
 
 class TripCard extends Component {
   render() {
+    console.log(this.props.trip)
     const { trip, deleteTrip } = this.props;
     return (
       <Card className="trip-card" style={{ width: '18rem', height: '46rem' }}>
@@ -18,7 +19,7 @@ class TripCard extends Component {
             </ListGroup.Item>
             <ListGroup.Item>
               <span>Campsite:</span>
-              <p>Campsite stuff</p>
+              <p>{trip.campsite ? trip.campsite.site : null}</p>
             </ListGroup.Item>
             <ListGroup.Item>
               <span>Airbnb:</span>

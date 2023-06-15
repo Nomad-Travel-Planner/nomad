@@ -7,7 +7,6 @@ import Camping from "./Camping/Camping";
 import "./explore.css";
 import Header from "./Header";
 
-
 class Explore extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +27,7 @@ class Explore extends React.Component {
    * @param {Object} airbnbToEdit - The airbnb the user selected to edit
    */
   editAirbnb = async (airbnbToEdit) => {
-    console.log('airbnbToEdit', airbnbToEdit); // delete later
+    // console.log('airbnbToEdit', airbnbToEdit); // delete later
     const editedTrip = { ...this.state.trip };
     editedTrip.airbnb = airbnbToEdit;
     try {
@@ -40,10 +39,35 @@ class Explore extends React.Component {
         axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
 
         const requestURL = `${process.env.REACT_APP_SERVER}/travel-routes/${this.state.trip._id}`;
-        let response = await axios.patch(requestURL, editedTrip);
-        console.log('response', response.data); // delete later
+        await axios.patch(requestURL, editedTrip);
+        // console.log('response', response.data); // delete later
         this.setState({ trip: editedTrip });
         this.handleAlertTimer('Selected Airbnb successfully');
+      }
+    }
+    catch (err) {
+      this.setState({ successAlert: { show: false, message: '' } });
+      console.error(err);
+      this.setState({ error: 'Could not edit trip' });
+    }
+  };
+
+
+
+  editCamping = async (campsiteToEdit) => {
+    const editedTrip = { ...this.state.trip };
+    editedTrip.camping = campsiteToEdit;
+    try {
+      const res = await this.props.auth0.getIdTokenClaims();
+      const jwt = res.__raw;
+
+      if (res) {
+        axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
+
+        const requestURL = `${process.env.REACT_APP_SERVER}/travel-routes/${this.state.trip._id}`;
+        await axios.patch(requestURL, editedTrip);
+        this.setState({ trip: editedTrip });
+        this.handleAlertTimer('Selected Campsite successfully');
       }
     }
     catch (err) {
@@ -67,7 +91,7 @@ class Explore extends React.Component {
 
         const requestURL = `${process.env.REACT_APP_SERVER}/travel-routes`;
         let response = await axios.post(requestURL, this.state.trip);
-        console.log('response', response.data); // delete later
+        // console.log('response', response.data); // delete later
         this.setState({ trip: response.data, tripCreated: true });
         // this.handleAlertTimer('Created trip successfully');
       }

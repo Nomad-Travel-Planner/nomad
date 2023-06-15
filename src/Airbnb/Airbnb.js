@@ -1398,10 +1398,10 @@ class Airbnb extends React.Component {
 
   getAirbnbs = (form) => {
     let requestURL = `${process.env.REACT_APP_SERVER}/airbnb?location=${form.location}&checkin=${form.checkin}&checkout=${form.checkout}&adults=${form.adults}&children=${form.children}&pets=${form.pets}&page=1`;
-    console.log(requestURL);
+    // console.log(requestURL);
     axios.get(requestURL)
       .then(response => {
-        console.log(response);
+        // console.log(response);
         // Only stores first 10 airbnbs (haven't tested yet)
         this.setState({ airbnbData: response.data.splice(10), error: ''}, () => console.log('airbnbData:', this.state.airbnbData));
       })

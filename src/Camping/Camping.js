@@ -5,6 +5,7 @@ import Campsites from "./Campsites";
 
 
 
+
 class Camping extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,9 @@ class Camping extends React.Component {
       campsiteArr: []
     }
   }
+  componentDidMount(){
+    console.log(this.props.trips);
+  };
 
   handleInput = (e) => {
     e.preventDefault();
@@ -52,7 +56,7 @@ class Camping extends React.Component {
 
   getCampsites = () => {
     let requestURL = `${process.env.REACT_APP_SERVER}/camping?query=${this.state.query}`;
-    console.log(requestURL);
+    // console.log(requestURL);
     axios.get(requestURL)
       .then(response => {
         this.setState({ campingData: response.data });
@@ -81,7 +85,8 @@ class Camping extends React.Component {
   
         {this.state.campingData.length > 0 &&
         <Campsites
-        campingData={this.state.campingData} />}
+        campingData={this.state.campingData} editCamping={this.props.editCamping}/>}
+        
         
       </>
     )

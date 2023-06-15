@@ -55,12 +55,24 @@
   color:ivory;
   text-align: center;
   font-size: 30px;
+  padding:30px;
 }
+
 .camp {
+  display: inline-block;
+  position: relative;
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
+  padding:30px;
 }
+
 .camp-header{
   font-size: 30px;
+}
+
+.acc {
+  display: inline-block;
+  position: relative;
+  padding:10px;
 }
 

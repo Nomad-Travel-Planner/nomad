@@ -6,6 +6,7 @@ import Airbnb from "./Airbnb/Airbnb";
 import Camping from "./Camping/Camping";
 import "./explore.css";
 import Header from "./Header";
+import { Navigate } from "react-router-dom";
 
 
 class Explore extends React.Component {
@@ -19,7 +20,8 @@ class Explore extends React.Component {
       },
       tripCreated: false,
       error: '',
-      successAlert: { show: false, message: '' }
+      successAlert: { show: false, message: '' },
+      navigateToProfile: false
     }
   }
   
@@ -79,7 +81,12 @@ class Explore extends React.Component {
     }
   }
 
-  // Function to handle the timer and hide the alert after a specified duration
+  /**
+   * Function to handle the timer and hide the alert after a specified duration.
+   * handleAlertTimer code by ChatGPT
+   * @param {String} message - The Alert message to display to user
+   * @returns - Function that clears the timer
+   */
   handleAlertTimer = (message) => {
     this.setState({ successAlert: { show: true, message: message } });
 
@@ -95,6 +102,7 @@ class Explore extends React.Component {
   // Gives an Alert to user that their new trip was made
   saveTrip = () => {
     this.handleAlertTimer('Created trip successfully');
+    this.setState({navigateToProfile: true});
   }
 
   // componentDidMount() {
@@ -104,13 +112,14 @@ class Explore extends React.Component {
   render() {
     return (
       <div className="explore">
+        <Header/>
         {!this.state.tripCreated && (
           <div class="d-grid gap-2">
             <Button variant="primary" type="button" size="lg" onClick={this.createTrip}>Create trip!</Button>
           </div>
         )}
 
-        {/* Only shows once trip is created */}
+        {/* Only shows once trip is created. transition={Fade} is not working for whatever reason */}
         {this.state.successAlert.show && <Alert variant="success" transition={Fade}>{this.state.successAlert.message}</Alert>}
         {this.state.tripCreated && <Camping />}
         {this.state.tripCreated && <Airbnb trip={this.state.trip} editAirbnb={this.editAirbnb} />}
@@ -119,7 +128,7 @@ class Explore extends React.Component {
             <Button variant="primary" onClick={this.saveTrip}>Save Trip</Button>
           </div>
         )}
-        <Header/>
+        {this.state.navigateToProfile && <Navigate to='/profile'/>}
       </div>
     )
   }

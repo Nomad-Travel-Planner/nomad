@@ -8,7 +8,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 
 class Header extends React.Component {
   render() {
-    console.log(this.props.auth0);
+    // console.log(this.props.auth0);
     return (
       <div className="header">
         {/* <h1>NOMAD</h1> */}

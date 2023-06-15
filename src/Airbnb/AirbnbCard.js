@@ -28,7 +28,7 @@ class AirbnbCard extends Component {
           </Carousel>
           <Card.Body>
             <Card.Title>{airbnb.name}</Card.Title>
-            <Card.Text><span>Address: </span>{airbnb.address}</Card.Text>
+            <Card.Text><span>Location: </span>{airbnb.address}</Card.Text>
             
             <button className="button arrow mb-3" onClick={() => this.setState({ showModal: true })}>Show details</button><br/>
             <Button variant="primary" onClick={() => editAirbnb(airbnb)}>Select</Button>

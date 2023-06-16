@@ -16,7 +16,7 @@ const center = {
 function Mapcomplete() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyCEhKoySzKyHd1udsOS-TCBem6dSR1wp5s",
+    googleMapsApiKey: process.env.REACT_APP_MAP_KEY,
     libraries: ['places']
   });
 

@@ -40,6 +40,18 @@
   margin: 0;
   /* margin: 30px 30px 0px 30px; */
 }
+
+.about {
+  font-family: 'Amatic SC', cursive;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 1.3rem;
+}
+
+.about span {
+  font-size: 1.6rem;
+}
+
 .camping-form.card {
   margin:20px;
 }
@@ -70,13 +82,13 @@
   font-size: 30px;
 }
 
-.accordion-body {
+.explore .accordion-body {
   display: inline-block;
   position: relative;
   padding:10px;
 }
 
-.accordion-body img {
+.explore .accordion-body img {
   max-height: 300px;
   margin:10px;
 }

@@ -11,14 +11,19 @@ body {
   background-color: lightblue;
 }
 
-.col {
+.explore {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.explore .col {
   width:800px;
   margin:auto;
   padding:10px;
   text-align: center;
 }
 
-.accordion-body {
+.explore .accordion-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,7 +31,7 @@ body {
   margin:20px;
 }
 
-.accordion-body img {
+.explore .accordion-body img {
   max-height: 300px;
   max-width: 700px;
   margin:auto;

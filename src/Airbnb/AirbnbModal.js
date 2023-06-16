@@ -23,9 +23,9 @@ class AirbnbModal extends Component {
             <ListGroup.Item><span>Rate per night: </span>${airbnb.price.rate} USD</ListGroup.Item>
             <ListGroup.Item><span>Ratings: </span>{airbnb.rating}</ListGroup.Item>
             <ListGroup.Item><span>Total Reviews: </span>{airbnb.reviewsCount}</ListGroup.Item>
-            {/* <ListGroup.Item><a href={airbnb.url}>View on Airbnb.com</a></ListGroup.Item> */}
+            <ListGroup.Item><a href={airbnb.url} className='mt-3 text-center' target='_blank' rel="noreferrer" style={{fontSize: '1.2rem'}}>View on Airbnb.com</a></ListGroup.Item>
           </ListGroup>
-          <a href={airbnb.url} className='mt-3 text-center' target='_blank' rel="noreferrer">View on Airbnb.com</a>
+          {/* <a href={airbnb.url} className='mt-3 text-center' target='_blank' rel="noreferrer">View on Airbnb.com</a> */}
           {/* <Link to={airbnb.url}><button className='button arrow'>View on Airbnb</button></Link> */}
         </Modal.Body>
         <Modal.Footer>

@@ -30,7 +30,6 @@ class Explore extends React.Component {
    * @param {Object} airbnbToEdit - The airbnb the user selected to edit
    */
   editAirbnb = async (airbnbToEdit) => {
-    // console.log('airbnbToEdit', airbnbToEdit); // delete later
     const editedTrip = { ...this.state.trip };
     editedTrip.airbnb = airbnbToEdit;
     try {
@@ -38,12 +37,10 @@ class Explore extends React.Component {
       const jwt = res.__raw;
 
       if (res) {
-        // this.setState({error: '', successAlert: {show: true, message: 'Selected Airbnb successfully'}});
         axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
 
         const requestURL = `${process.env.REACT_APP_SERVER}/travel-routes/${this.state.trip._id}`;
         await axios.patch(requestURL, editedTrip);
-        // console.log('response', response.data); // delete later
         this.setState({ trip: editedTrip });
         this.handleAlertTimer('Selected Airbnb successfully');
       }
@@ -55,11 +52,13 @@ class Explore extends React.Component {
     }
   };
 
-
-
+  /**
+   * Edits the campsite selection when the user selects a different campsite
+   * @param {Object} campsiteToEdit - The campsite the user selected to edit
+   */
   editCamping = async (campsiteToEdit) => {
     const editedTrip = { ...this.state.trip };
-    editedTrip.camping = campsiteToEdit;
+    editedTrip.campsite = campsiteToEdit;
     try {
       const res = await this.props.auth0.getIdTokenClaims();
       const jwt = res.__raw;
@@ -89,14 +88,10 @@ class Explore extends React.Component {
       const jwt = res.__raw;
 
       if (res) {
-        // this.setState({error: '', successAlert: {show: true, message: 'Created trip successfully'}});
         axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
-
         const requestURL = `${process.env.REACT_APP_SERVER}/travel-routes`;
         let response = await axios.post(requestURL, this.state.trip);
-        // console.log('response', response.data); // delete later
         this.setState({ trip: response.data, tripCreated: true });
-        // this.handleAlertTimer('Created trip successfully');
       }
     }
     catch (err) {
@@ -130,10 +125,6 @@ class Explore extends React.Component {
     this.setState({navigateToProfile: true});
   }
 
-  // componentDidMount() {
-  //   this.createTrip();
-  // }
-
   render() {
     return (
       <div className="explore">
@@ -147,11 +138,11 @@ class Explore extends React.Component {
         {/* Only shows once trip is created. transition={Fade} is not working for whatever reason */}
         {this.state.successAlert.show && <Alert variant="success" transition={Fade}>{this.state.successAlert.message}</Alert>}
         {this.state.tripCreated && <MapComplete />}
-        {this.state.tripCreated && <Camping />}
+        {this.state.tripCreated && <Camping trip={this.state.trip} editCamping={this.editCamping}/>}
         {this.state.tripCreated && <Airbnb trip={this.state.trip} editAirbnb={this.editAirbnb} />}
         {this.state.tripCreated && (
           <div class="text-center mt-3 mb-3">
-            <Button variant="primary" onClick={this.saveTrip}>Save Trip</Button>
+            <Button variant="primary" onClick={this.saveTrip} size="lg">Save Trip</Button>
           </div>
         )}
         {this.state.navigateToProfile && <Navigate to='/profile'/>}

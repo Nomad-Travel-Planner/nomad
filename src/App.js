@@ -24,21 +24,14 @@ class App extends React.Component {
     return (
       <>
         <div>
-          {/* <div className="home"> */}
           <Header />
-          <Footer />
-        </div>
-        {/* <Airbnb/> */}
-
         <div className="home">
           <h1>NOMAD</h1>
           <Footer />
         </div>
-        {/* <Airbnb/>  */}
-        {/* NOMAD  */}
-
-        <Footer />
+        </div>
       </>
+
     )
   }
 }

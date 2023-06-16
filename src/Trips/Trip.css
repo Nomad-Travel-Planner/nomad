@@ -16,5 +16,14 @@
 }
 
 .trip-card p {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+}
+
+.trip-card .date {
+  /* border: 1px dotted #f0f0f0; */
+  border-radius: 10px;
+}
+
+.trip-card p span {
+  font-size: 1rem;
 }

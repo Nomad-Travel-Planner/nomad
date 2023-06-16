@@ -12,6 +12,7 @@ import Explore from "./Explore";
 import Profile from "./Profile";
 import LoginButton from "./Login";
 import Trip from './Trips/Trip';
+import About from './About';
 
 
 
@@ -29,6 +30,7 @@ root.render(
       <Routes>
         <Route exact path="/" element={<App/>} />
         <Route path="/explore" element={<Explore />} />
+        <Route path='/about' element={<About/>}/>
         <Route path="/profile" element={<Profile />}/>
         <Route path="/login" element={<LoginButton />} />
         <Route path="/trip/:tripID" element={<Trip />} />

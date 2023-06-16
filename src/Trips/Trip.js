@@ -12,15 +12,12 @@ const Trip = (props) => {
   const [trip, setTrip] = useState({});
   const [error, setError] = useState('');
   const [showAlert, setShowAlert] = useState({show: false, message: ''});
-  // const [airbnbToEdit, setAirbnbToEdit] = useState({});
-  // console.log('tripID', tripID); // delete later
 
   /**
    * Edits the Airbnb selection when the user selects a different Airbnb
    * @param {Object} airbnbToEdit - The airbnb the user selected to edit
    */
   const editAirbnb = async (airbnbToEdit) => {
-    // console.log('airbnbToEdit', airbnbToEdit); // delete later
     const editedTrip = { ...trip };
     editedTrip.airbnb = airbnbToEdit;
     try {
@@ -29,12 +26,9 @@ const Trip = (props) => {
 
       if (res) {
         setError('');
-        // setShowAlert({show: true, message: 'Selected Airbnb successfully'});
         axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
-
         const requestURL = `${process.env.REACT_APP_SERVER}/travel-routes/${tripID}`;
         await axios.patch(requestURL, editedTrip);
-        // console.log('response', response.data); // delete later
         setTrip(editedTrip);
         handleAlertTimer('Selected Airbnb successfully');
       }
@@ -47,16 +41,12 @@ const Trip = (props) => {
   };
 
   /**
-   * Function to handle the timer and hide the alert after a specified duration.
-   * handleAlertTimer code by ChatGPT
-   * @param {String} message - The Alert message to display to user
-   * @returns - Function that clears the timer
+   * Edits the campsite selection when the user selects a different campsite
+   * @param {Object} campsiteToEdit - The campsite the user selected to edit
    */
-
   const editCamping = async (campsiteToEdit) => {
-    // console.log(campsiteToEdit);
     const editedTrip = { ...trip };
-    editedTrip.camping = campsiteToEdit;
+    editedTrip.campsite = campsiteToEdit;
     try {
       const res = await props.auth0.getIdTokenClaims();
       const jwt = res.__raw;
@@ -78,7 +68,12 @@ const Trip = (props) => {
     }
   };
 
-
+  /**
+   * Function to handle the timer and hide the alert after a specified duration.
+   * handleAlertTimer code by ChatGPT
+   * @param {String} message - The Alert message to display to user
+   * @returns - Function that clears the timer
+   */
   const handleAlertTimer = (message) => {
     setShowAlert({ show: true, message: message});
 
@@ -92,13 +87,12 @@ const Trip = (props) => {
   };
 
 
-  // Basically the same as the componentDidMount(). Only runs things once at the beginning.
+  // Basically the same as the componentDidMount(). Function only runs things once at the beginning.
   useEffect(() => {
     // Gets the trip from the database using the tripID param
     const getTrip = async () => {
       let requestURL = `${process.env.REACT_APP_SERVER}/travel-routes/${tripID}`;
       const res = await props.auth0.getIdTokenClaims();
-      // console.log('res', res);
       if (res) {
         const jwt = res.__raw;
         axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
@@ -116,7 +110,6 @@ const Trip = (props) => {
     getTrip();
   }, [tripID, props.auth0]);
 
-  // console.log('my trip', trip); // delete later
   return (
     <div className='trip'>
       {error && <Alert variant='warning' onClose={() => setError('')} dismissible>{error}</Alert>}

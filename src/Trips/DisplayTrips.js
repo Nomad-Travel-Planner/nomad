@@ -19,11 +19,11 @@ class DisplayTrips extends Component {
       const res = await this.props.auth0.getIdTokenClaims();
       const jwt = res.__raw;
       axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
-      const trips =  await axios(`${process.env.REACT_APP_SERVER}/travel-routes`);
-      // console.log('trips', trips);
-      this.setState({trips: trips.data, error: ''});
+      const trips =  await axios.get(`${process.env.REACT_APP_SERVER}/travel-routes`);
+      this.setState({trips: trips.data});
     } catch (err) {
-      this.setState({error: 'Could not load saved trips'});
+      // this.setState({error: 'Could not load saved trips'});
+      console.error(err);
     }
   }
 

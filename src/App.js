@@ -26,26 +26,26 @@ class App extends React.Component {
 
   render() {
     return(
-      <>
-      {/* <div className="home"> */}
+      // <>
+      <div className="app">
         <Header />
         <Footer />
-      </div>
+      {/* </div>
       <Searchbox />
       <MainMap />
       <MarkerInfoWindowGmapsObj />
       <MarkerInfoWindow />
-      <Airbnb/>
+      <Airbnb/> */}
 
         <div className="home">
           <h1>NOMAD</h1>
           <Footer />
         </div>
-      <Airbnb/> */}
+      {/* <Airbnb/>  */}
       {/* NOMAD  */}
 
-      <Footer />
-      </>
+      {/* <Footer /> */}
+      </div>
     )
   }
 }

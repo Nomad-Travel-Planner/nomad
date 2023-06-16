@@ -7,6 +7,7 @@ import Camping from "./Camping/Camping";
 import "./explore.css";
 import Header from "./Header";
 import { Navigate } from "react-router-dom";
+import MapComplete from "./Map/MapComplete";
 
 class Explore extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Explore extends React.Component {
       tripCreated: false,
       error: '',
       successAlert: { show: false, message: '' },
-      navigateToProfile: false
+      navigateToProfile: false,
     }
   }
   
@@ -145,6 +146,7 @@ class Explore extends React.Component {
 
         {/* Only shows once trip is created. transition={Fade} is not working for whatever reason */}
         {this.state.successAlert.show && <Alert variant="success" transition={Fade}>{this.state.successAlert.message}</Alert>}
+        {this.state.tripCreated && <MapComplete />}
         {this.state.tripCreated && <Camping />}
         {this.state.tripCreated && <Airbnb trip={this.state.trip} editAirbnb={this.editAirbnb} />}
         {this.state.tripCreated && (

@@ -18,6 +18,8 @@ class Explore extends React.Component {
         campsite: {},
         airbnb: null
       },
+      origin: '',
+      destination: '',
       tripCreated: false,
       error: '',
       successAlert: { show: false, message: '' },
@@ -130,7 +132,7 @@ class Explore extends React.Component {
       <div className="explore">
         <Header/>
         {!this.state.tripCreated && (
-          <div class="d-grid gap-2">
+          <div className="d-grid gap-2">
             <Button variant="primary" type="button" size="lg" onClick={this.createTrip}>Create trip!</Button>
           </div>
         )}
@@ -141,7 +143,7 @@ class Explore extends React.Component {
         {this.state.tripCreated && <Camping trip={this.state.trip} editCamping={this.editCamping}/>}
         {this.state.tripCreated && <Airbnb trip={this.state.trip} editAirbnb={this.editAirbnb} />}
         {this.state.tripCreated && (
-          <div class="text-center mt-3 mb-3">
+          <div className="text-center mt-3 mb-3">
             <Button variant="primary" onClick={this.saveTrip} size="lg">Save Trip</Button>
           </div>
         )}

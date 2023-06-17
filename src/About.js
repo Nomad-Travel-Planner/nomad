@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { Container, ListGroup } from 'react-bootstrap';
+import "./about.css";
 
 class About extends Component {
   render() {

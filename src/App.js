@@ -10,7 +10,7 @@ import Footer from "./Footer";
 import "./App.css";
 
 
-import Mapcomplete from "./Map/MapComplete";
+// import Mapcomplete from "./Map/MapComplete";
 // import Marker from "./Map/Marker";
 // import AutoComplete from "./Map/AutoComplete";
 

@@ -22,6 +22,7 @@ function Mapcomplete() {
 
   const [map, setMap] = useState(null);
   const [directionsResponse, setDirectionsResponse] = useState(null);
+  console.log(map);
 
   const originRef = useRef();
   const destiantionRef = useRef();

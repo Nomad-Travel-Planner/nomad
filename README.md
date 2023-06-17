@@ -36,6 +36,10 @@ the Google Maps, RIBD Recreation.gov campsite, and Airbnb from RapidAPI.com APIs
 
 ## Project Resources
 
+Website reference for google-maps:
+
+https://udarax.me/technology/how-to-draw-directions-between-2-points-in-the-google-maps-using-react-js/
+
 APIs:
 
 - [JavaScript Google Maps API](https://developers.google.com/maps/documentation/javascript)
